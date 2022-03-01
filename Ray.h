@@ -3,22 +3,32 @@
 class Ray {
   private:
     float lambda;
-    Coordinates src;
-    Coordinates dir;
+    Coordinates coordinates;
+    float dir;
     float phase;
   public:
-    Ray (float lambda, float phase, Coordinates src, Coordinates dir)
-    : src(src), dir(dir)
+    Ray (float lambda, float phase, Coordinates coordinates, float dir)
+    : coordinates(coordinates)
     {
       this->lambda = lambda;
       this->phase = phase;
+      this->dir = dir;
     }
 
-    Coordinates getSrc() {
-      return src;
+    Coordinates getCoordinates() {
+      return coordinates;
     }
 
-    Coordinates getDir() {
+    float getDir() {
       return dir;
+    }
+
+    void setCoordinates(float x, float y) {
+      coordinates.setx(x);
+      coordinates.sety(y);
+    }
+
+    void setDir(float dir) {
+      this->dir = dir;
     }
 };

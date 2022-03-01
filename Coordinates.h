@@ -18,6 +18,14 @@ class Coordinates {
     }
 
     float gety() {
-      return x;
+      return y;
+    }
+
+    void setx(float x) {
+      this->x = x;
+    }
+
+    void sety(float y) {
+      this->y = y;
     }
 };
