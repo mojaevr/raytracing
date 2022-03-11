@@ -2,30 +2,17 @@ class Coordinates {
   public:
     float x;
     float y;
+    float z;
   public:
-    Coordinates(float x, float y) {
+    Coordinates(float x, float y, float z) {
       this->x = x;
       this->y = y;
+      this->z = z;
     }
 
     Coordinates(const Coordinates &c) {
       x = c.x;
       y = c.y;
-    }
-
-    float getx() {
-      return x;
-    }
-
-    float gety() {
-      return y;
-    }
-
-    void setx(float x) {
-      this->x = x;
-    }
-
-    void sety(float y) {
-      this->y = y;
+      z = c.z;
     }
 };

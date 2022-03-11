@@ -1,34 +1,18 @@
  #include "Coordinates.h"
 
 class Ray {
-  private:
-    float lambda;
-    Coordinates coordinates;
-    float dir;
-    float phase;
   public:
-    Ray (float lambda, float phase, Coordinates coordinates, float dir)
-    : coordinates(coordinates)
+    Coordinates n;
+    Coordinates r;
+    float intensity;
+    float len;
+    Ray (Coordinates r, Coordinates n, float intensity)
+    : r(r), n(n)
     {
-      this->lambda = lambda;
-      this->phase = phase;
-      this->dir = dir;
-    }
-
-    Coordinates getCoordinates() {
-      return coordinates;
-    }
-
-    float getDir() {
-      return dir;
-    }
-
-    void setCoordinates(float x, float y) {
-      coordinates.setx(x);
-      coordinates.sety(y);
-    }
-
-    void setDir(float dir) {
-      this->dir = dir;
+      if (n.x == n.y == n.z == 0) throw std::invalid_argument( "n cannot be 0");
+      this->r = r;
+      this->n = n;
+      this->intensity = intensity;
+      this->len = 0;
     }
 };
